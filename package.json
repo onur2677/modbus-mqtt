@@ -1,0 +1,23 @@
+{
+    "name": "modbus-mqtt",
+    "version": "1.0.0",
+    "description": "This module sends Modbus data to MQTT protocol",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "keywords": [
+        "modbus-mqtt",
+        "modbus",
+        "mqtt",
+        "iot",
+        "gateway",
+        "bridge"
+    ],
+    "author": "onur2677",
+    "license": "ISC",
+    "dependencies": {
+        "modbus-serial": "^8.0.3",
+        "mqtt": "^4.2.8"
+    }
+}
