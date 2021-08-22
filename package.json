@@ -4,6 +4,7 @@
     "description": "This module sends Modbus data to MQTT protocol",
     "main": "index.js",
     "scripts": {
+        "standard": "standard --fix",
         "test": "node test.js"
     },
     "keywords": [
@@ -19,5 +20,8 @@
     "dependencies": {
         "modbus-serial": "^8.0.3",
         "mqtt": "^4.2.8"
+    },
+    "devDependencies": {
+        "standard": "^16.0.3"
     }
 }

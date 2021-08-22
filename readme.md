@@ -2,6 +2,9 @@
 
 This module sends Modbus data to MQTT protocol
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+
 ## Supported Modbus Functions
 <table>
 <thead>
@@ -47,34 +50,32 @@ Example; ```modbus-iot/12/readInputRegisters```
 const ModbusMqtt = require('./index')
 
 const options = {
-    mqttOptions: {
-        brokerUrl: 'mqtt://broker.mqttdashboard.com',
+  mqttOptions: {
+    brokerUrl: 'mqtt://broker.mqttdashboard.com'
+  },
+  modbusOptions: {
+    type: 'TCP',
+    tcp: {
+      ip: '127.0.0.1',
+      port: 802
     },
-    modbusOptions: {
-        type: 'TCP',
-        tcp: {
-            ip: '127.0.0.1',
-            port: 802
-        },
-        id: 1
-    }
+    id: 1
+  }
 }
 
 const modbusMqtt = new ModbusMqtt(options)
 
 modbusMqtt.on('modbus-connect', () => {
-    setInterval(() => {
-        modbusMqtt.modbusClient.readInputRegisters(0, 10, (err, response) => {
-            if (err) return console.log('Err ', err.message)
-            console.log('READ INPUT REGISTERS ', response)
-        })
-    }, 1000);
+  setInterval(() => {
+    modbusMqtt.modbusClient.readInputRegisters(0, 10, (err, response) => {
+      if (err) return console.log('Err ', err.message)
+      console.log('READ INPUT REGISTERS ', response)
+    })
+  }, 1000)
 
-
-    setInterval(() => {
-        modbusMqtt.modbusClient.readInputRegisters(20, 10)
-    }, 2000);
-
+  setInterval(() => {
+    modbusMqtt.modbusClient.readInputRegisters(20, 10)
+  }, 2000)
 })
 ```
 
