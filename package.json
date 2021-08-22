@@ -1,6 +1,6 @@
 {
     "name": "modbus-mqtt",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "This module sends Modbus data to MQTT protocol",
     "main": "index.js",
     "scripts": {
@@ -23,5 +23,9 @@
     },
     "devDependencies": {
         "standard": "^16.0.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/onur2677/modbus-mqtt"
     }
 }

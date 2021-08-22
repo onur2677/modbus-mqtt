@@ -1,4 +1,4 @@
-# Modbus-IoT
+# Modbus-Mqtt
 
 This module sends Modbus data to MQTT protocol
 
